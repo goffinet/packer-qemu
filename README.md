@@ -10,4 +10,5 @@ Docker image for building qemu images with packer
       --privileged                                                                     \
       --cap-add=ALL -v /lib/modules:/lib/modules                                       \
       -v `pwd`:/opt/                                                                   \
-      -w /opt/ goffinet/packer-qemu build -var-file=hardened.json CentOS-6-qemu.json
+      -v $HOME/.ssh/id_rsa:/root/.ssh/id_rsa                                           \
+      -w /opt/ goffinet/packer-qemu build centos7.json
